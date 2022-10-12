@@ -32,12 +32,13 @@ int removeFalsified (int *clause, int index) {
         if (mask[-*clause] != stamp)
           fprintf (lrat, "%i ", *clause);
         clause++; }
-      fprintf (lrat, "0 %i ", cIndex[index]);
+      fprintf (lrat, "0 ");
       clause = _clause;
       while (*clause) {
         if (mask[-*clause] == stamp)
           fprintf (lrat, "%i ", vIndex[abs(*clause)]);
         clause++; }
+      fprintf (lrat, "%i ", cIndex[index]);
       fprintf (lrat, "0\n");
       clause = _clause;
 
